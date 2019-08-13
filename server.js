@@ -4,7 +4,7 @@ const bodyParser = require ('body-parser')
 
 const {Product,Store} = require ('./models/store.js')
 
-const PORT = 3030
+const PORT = process.env.PORT||3030
 
 const app = express();
 
