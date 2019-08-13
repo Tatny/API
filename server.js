@@ -48,16 +48,16 @@ app.post("/create/product", (req,res)=>{
     })
 })
 
-app.get('/store:idStore', (req,res)=>{
+app.get('/store/:idStore', (req,res)=>{
     const {idStore} = req.params;
     Store.findById(idStore)
     .populate('products')
-    .excec()
+    .exec()
     .then(store=>res.send(store))
     .catch(err=>res.status(409).send(err))
 });
 
-app.get('/product/:idProducto', (req,res)=>{
+app.get('/product/:idProduct', (req,res)=>{
     const {idProduct} = req.params;
     Product.findById(idProduct).exec()
     .then(product => 

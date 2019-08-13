@@ -2,7 +2,9 @@ const mongoose = require ("mongoose")
 const URL_MONGO = 'mongodb+srv://Tatny:ponchita23@tatny-zvudk.mongodb.net/test?retryWrites=true&w=majority'
 
 mongoose.connect(URL_MONGO,{useNewUrlParser: true}, (err)=>{
-    if (!err) console.log('conexion exitosa')
+    !err 
+    ? console.log('conexion exitosa')
+    : console.log(err)
 })
 
 const Schema = mongoose.Schema;
